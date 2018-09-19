@@ -1,0 +1,49 @@
+	
+<div class="row" style="margin-bottom: 2em;">
+	<div class="col-md-2">
+		<a routerLink="/">Homepage</a>
+	</div>
+	<div class="col-md-8 text-center">
+		<h5 class="inline-block"> 6 Days Weather For {{city}} , Starting Today </h5>
+	</div>
+</div>
+<div class="row">
+<!-- <div *ngIf="all_weather_object"> -->
+	<div class="col-md-4" *ngFor="let weather_object of all_weather_object">
+		
+		<div class="one_day_widget">
+			<div class="text-center">			
+				<h5 class="inline-block">
+				  
+				</h5>
+			</div>
+
+			<div class="text-center widget-title-holder">
+	    		<div class="inline-block auto-margin">
+	    			<h5 class="widget-title">
+	    		        {{weather_object.applicable_date | date:'fullDate'}}
+	    		    </h5>
+	    			<div class="weather-icon" [ngStyle]="{'background': 'url(' + icon_url + weather_object.weather_state_abbr + '.svg' +') '}">
+    	  
+    	    		</div>
+	        	</div>
+	    	</div>
+			
+			<p>
+            	Temperature: &nbsp;&nbsp; {{weather_object.the_temp | number}}
+	        </p>
+
+	         <p>
+	            Maximum Temperature: &nbsp;&nbsp; {{weather_object.max_temp | number}}
+	        </p>
+
+	         <p>
+	            Minimum Temperature: &nbsp;&nbsp; {{weather_object.min_temp | number}}
+	        </p>
+
+		</div>
+		
+	</div>
+<!-- </div> -->
+</div>
+

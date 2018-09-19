@@ -1,0 +1,19 @@
+<div class="search-text-btn-holder">
+	<form role="form" #myForm="ngForm" (ngSubmit)="loadSearchResults(myForm)">
+
+		<input type="text" name="search_text" class="form-control no_border_rad" 
+		    placeholder=" Search By City Name ... " 
+		    [(ngModel)]="m_search_text"
+		    #search_text="ngModel"
+		    required=""          
+		    >
+
+		 <button 
+	    	type="submit" 
+	    	class="btn btn-success thin_btn no_border_rad" 
+	    	[disabled]="!myForm.form.valid"
+	    	>
+	    	<i class="fa fa-search"></i> Search
+	    </button>
+	</form>
+</div>

@@ -1,0 +1,31 @@
+<div *ngIf="loading"> <i class="fa fa-spinner"></i> </div>
+<a routerLink="/weather/{{woeid}}" *ngIf="!loading">
+    <div class="col-xs-12 weather-widget">
+    	<div class="text-center">
+    		<div class="inline-block auto-margin">
+    			<h5 class="widget-title">
+    		        {{city}}
+    		    </h5>
+    			<div class="weather-icon" [ngStyle]="{'background': 'url(' + icon_url + ') '}">
+    	  
+    	    	</div>
+        	</div>
+    	</div>
+       
+        <h5 class="page-header">
+            Temperature: &nbsp;&nbsp; {{temperature | number}}
+        </h5>
+
+         <h5 class="page-header">
+            Max Temperature: &nbsp;&nbsp; {{maximum_temperature | number}}
+        </h5>
+
+         <h5 class="page-header">
+            Min Temperature: &nbsp;&nbsp; {{minimum_temperature | number}}
+        </h5>       
+    </div>
+</a>
+
+<div *ngIf="no_woeid">
+    {{no_woeid_message}}
+</div>

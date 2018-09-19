@@ -1,0 +1,72 @@
+
+.progress_bar {
+    display: none;
+}
+
+img {
+	border: 3px solid green;
+}
+
+.mylink {
+	font-size: 3em;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.auto-margin {
+	margin: 0 auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.space-bottom {
+	margin-bottom: 1em;
+}
+
+.weather-widget {
+	background-color: #8FC561;
+	opacity: 0.8;
+	/*background-color: rgba(0.4, 140, 195, 95);*/
+	min-height: 150px;
+}
+
+.weather-widget h5{
+	font-size: 0.9em;
+}
+
+.weather-icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px 0 0;
+    display: inline-block;
+}
+
+.widget-title {
+	display: inline-block;
+	margin-right:10px;
+	font-size: 1em;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 1em;
+
+}
+
+.widget-title-holder {
+	border-bottom: 1px solid green;
+	margin-bottom:0.5em;
+}
+
+.search-text-btn-holder input[type="text"]{
+	width: 70%;
+	display: inline-block;
+	font-size: 0.85em;
+}
+
+.search-text-btn-holder button{
+	display: inline-block;
+	font-size: 0.8em;
+}

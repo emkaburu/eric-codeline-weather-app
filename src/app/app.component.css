@@ -1,0 +1,42 @@
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src:url(../assets/fonts/Roboto-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'AllertaStencil-Regular';
+    src:url(../assets/fonts/AllertaStencil-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'RalewaySemiBold';
+    src:url(../assets/fonts/raleway/Raleway-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'RalewayRegular';
+    src:url(../assets/fonts/raleway/Raleway-Regular.ttf) format('truetype');
+}
+
+@font-face { 
+    font-family: 'RalewayBold';
+    src:url(../assets/fonts/raleway/Raleway-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'JosefinSlab';
+    src:url(../assets/fonts/JosefinSlab.ttf) format('truetype');
+}
+
+/*@font-face {
+    font-family: 'Glyphicons';
+    src:url(../assets/fonts/glyph, h1, h2, h3, h4, h5, picons-halflings-regular.ttf) format('truetype');
+}
+*/
+*, h1, h2, h3, h4, h5, p{
+    font-family: RalewayRegular !important;
+}
+
+.no_radius {
+    border-radius: 0px !important;
+}
