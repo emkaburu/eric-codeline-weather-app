@@ -15,6 +15,7 @@ export class SearchBarComponent implements OnInit {
   	constructor(private router: Router) { }
 
   	loadSearchResults(form) {
+      console.log("Running loadSearchResults ... with ", form.value.search_text);
   		if(form.value.search_text != null){
   			this.router.navigate(['/search/'+form.value.search_text]);
   		}

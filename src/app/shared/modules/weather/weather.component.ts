@@ -26,9 +26,17 @@ export class WeatherComponent implements OnInit {
         this.command = "search";
         this.weatherService.getWoeid(this.command, this.city)
         .subscribe(response => {
-            //assign woeid and city here
-            this.city = response[0].title
-            this.woeid = response[0].woeid
+            if(response.error) return
+            if response.length == 0 {
+                this.no_woeid = true;
+                this.loading = false;
+                return;
+            }
+
+            let data = JSON.parse(JSON.stringify(response[0]));
+
+            this.city = data.title
+            this.woeid = data.woeid
 
             if(this.woeid != null){
                 this.getCityWeatherToday(this.city, this.woeid);
@@ -41,10 +49,12 @@ export class WeatherComponent implements OnInit {
     }
 
     getCityWeatherToday(location, woeid) {
-        
+       
         this.command = "location";
         this.weatherService.getCityWeather(this.command, this.woeid)
         .subscribe(response => {
+
+            if(response.error) return
             
             this.today_weather_object = this.getTodayWeatherObj(response);
             this.temperature = this.today_weather_object.the_temp;
@@ -65,7 +75,9 @@ export class WeatherComponent implements OnInit {
 
     }
 
-    constructor(private weatherService: WeatherService) { }
+    constructor(private weatherService: WeatherService) { 
+
+    }
 
     ngOnInit() {
 

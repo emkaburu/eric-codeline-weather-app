@@ -9,21 +9,30 @@ import { WeatherService } from '../weather/weather.service';
 })
 export class SearchResultsComponent implements OnInit {
 	private city: string;
-    private is_results = false;
+  private is_results = false;
 
-	constructor(private activeRoute: ActivatedRoute) { }
-
-
-	ngOnInit() {
-		 this.activeRoute.queryParams.subscribe(queryParams => {
+	constructor(private activeRoute: ActivatedRoute, private router: Router) { 
+    console.log("SearchResultsComponent constructor");
+    this.activeRoute.queryParams.subscribe(queryParams => {
             this.activeRoute.params.subscribe(routeParams => {
                 let param_city    = routeParams.city;
                 
                 //If there is no param_woeid defined, we don't try to fetch any data
                 if(param_city != undefined) {
-                	this.city = param_city;
+                  this.city = param_city;
                 }
             });
         });
+
+    this.router.routeReuseStrategy.shouldReuseRoute = function() {
+        return false;
+    };
+
+  }
+
+
+	ngOnInit() {
+		 
+     console.log("SearchResultsComponent ngOnInit");
  	}
 }

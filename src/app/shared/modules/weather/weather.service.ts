@@ -13,35 +13,35 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class WeatherService {
-	private baseUrl = "http://www.wcline.app";
-	private locationUrl = "https://www.metaweather.com/api/location/search/?query=";
-	private weatherUrl = "https://www.metaweather.com/api/location/";
+	private baseUrl = "http://escort.brainchainltd.com/";
+	// private locationUrl = "https://www.metaweather.com/api/location/search/?query=";
+	// private weatherUrl = "https://www.metaweather.com/api/location/";
 	constructor(private http: HttpClient) { }
-
+// 
 
 	getWoeid(command, city) : Observable<any> {
-     /* return this.http.get(this.baseUrl+"?command="+command+"keyword="+city)
+      return this.http.get(this.baseUrl+"?command="+command+"&keyword="+city)
         .pipe(
           catchError(this.handleError('getWoeid', []))
-        ); */    
+        );     
 
-        return this.http.get(this.locationUrl+city)
+       /* return this.http.get(this.locationUrl+city)
         .pipe(
           catchError(this.handleError('getWoeid', []))
-        );   
+        );  */ 
      
     }
 
     getCityWeather(command, woeid) : Observable<any> {
-     /* return this.http.get(this.baseUrl+"?command="+command+"keyword="+woeid)
+      return this.http.get(this.baseUrl+"?command="+command+"&woeid="+woeid)
         .pipe(
           catchError(this.handleError('getCityWeather', []))
-        ); */     
+        );      
 
-        return this.http.get(this.weatherUrl+woeid)
+        /*return this.http.get(this.weatherUrl+woeid)
         .pipe(
           catchError(this.handleError('getWoeid', []))
-        );   
+        ); */  
      
     }
 
